@@ -12,6 +12,7 @@ const PORT = process.env.PORT || 3000;
 mongoose.connect(process.env.MONGODB_URL, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
+  serverSelectionTimeoutMS: 5000,
 })
 .then(() => {
   console.log('✅ Connected to MongoDB');
@@ -21,5 +22,5 @@ mongoose.connect(process.env.MONGODB_URL, {
 
 })
 .catch((err) => {
-  console.error('❌ MongoDB connection error:', err);
+  console.error('MongoDB connection error:', err);
 });
