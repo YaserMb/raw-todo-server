@@ -3,8 +3,7 @@ const cors = require("cors")
 const dotenv = require("dotenv")
 const mongoose = require("mongoose")
 const { errorHandler } = require("./middlewares/error");
-const authRoutes = require('./routes/v1/auth');
-const taskRoutes = require('./routes/v1/task');
+const v1Routes = require("./routes/v1");
 
 const app = express()
 app.use(cors())
@@ -14,8 +13,7 @@ app.use(cors())
 app.use(express.json());
 
 // Mount routes
-app.use('/api/v1/auth', authRoutes);
-app.use('/api/v1/tasks', taskRoutes);
+app.use("/api/v1", v1Routes);  
 
 // Error handling middleware
 app.use(errorHandler);
