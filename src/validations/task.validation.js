@@ -5,8 +5,8 @@ const createTaskValidation = Joi.object({
 }); 
 
 const updateTaskValidation = Joi.object({
-  name: Joi.string().min(3).optional(),
-  completed: Joi.boolean().optional()
+  // name: Joi.string().min(3).optional(),
+  completed: Joi.boolean().required().valid(true, false),
 }); 
 
 const taskIdValidation = Joi.object({

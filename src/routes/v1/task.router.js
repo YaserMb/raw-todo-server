@@ -7,7 +7,7 @@ const validate = require('../../middlewares/validation');
 
 router.get('/', authenticate, taskController.getTasks);
 router.post('/', authenticate, validate(createTaskValidation), taskController.createTask);
-router.put('/:id', authenticate, validate(updateTaskValidation), taskController.updateTask);
-router.delete('/:id', authenticate, validate(taskIdValidation), taskController.deleteTask);
+router.patch('/:id', authenticate, validate(updateTaskValidation), taskController.updateTask);
+router.delete('/:id', authenticate, taskController.deleteTask);
 
 module.exports = router;
