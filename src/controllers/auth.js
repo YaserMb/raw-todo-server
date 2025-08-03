@@ -31,7 +31,7 @@ const register = async (req, res, next) => {
       success: true,
       message: 'User registered successfully',
       data: {
-        user: {email: user.email},
+        user: {email: user.email, fullName: user.fullName, id: user._id},
         token
       }
     });
@@ -69,7 +69,7 @@ const login = async (req, res, next) => {
       success: true,
       message: 'Login successful',
       data: {
-        user: {email: user.email},
+        user: {email: user.email, fullName: user.fullName, id: user._id},
         token
       }
     });
